@@ -14,10 +14,10 @@ spring:
               lower-case-service-id: true
           routes:
             # Rutas para el servicio de publicaciones
-            - id: publicaciones-autor
-              uri: lb://SERVICE-PUBLICACIONES
+            - id: patient-data-collector
+              uri: lb://SERVICE-PATIENT-DATA-COLLECTOR
               predicates:
-                - Path=/api/v1/autores/**
+                - Path=/conjunta/2p/vital-signs/**
               filters:
                 - StripPrefix=2
             - id: publicaciones-libros

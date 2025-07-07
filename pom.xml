@@ -8,6 +8,7 @@
         <version>3.5.0</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+    <packaging>pom</packaging>
     <groupId>ec.edu.espe</groupId>
     <artifactId>microservicios</artifactId>
     <version>1.6.0</version>
@@ -17,7 +18,6 @@
     <modules>
         <module>eureka-server</module>
         <module>api-gateway</module>
+        <module>PatientDataCollector</module>
     </modules>
-
-
 </project>
