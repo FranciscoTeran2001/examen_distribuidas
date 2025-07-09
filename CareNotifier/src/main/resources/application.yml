@@ -2,7 +2,7 @@ spring:
   application:
     name: SERVICE-NOTIFICACIONES
   datasource:
-    url: jdbc:postgresql://localhost:26257/notificaciones_db?user=root&password=
+    url: jdbc:postgresql://localhost:36257/db_carenotifier?user=root&password=
     username: root
     password:
   jpa:
@@ -16,11 +16,11 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
   rabbitmq:
     host: localhost
-    port: 5672
+    port: 5673
     username: admin
     password: admin
 server:
-  port: 0
+  port: 8100
 
 eureka:
   client:

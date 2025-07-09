@@ -16,7 +16,7 @@ public class RabbitMQConfig {
 
     @Bean
     public Queue criticalAlertQueue(){
-        return QueueBuilder.durable("critical.alert.queue").build();
+        return QueueBuilder.durable("critical.alerts.queue").build();
     }
 
     @Bean

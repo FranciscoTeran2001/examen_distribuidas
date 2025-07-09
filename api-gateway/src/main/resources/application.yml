@@ -20,10 +20,10 @@ spring:
                 - Path=/conjunta/2p/vital-signs/**
               filters:
                 - StripPrefix=2
-            - id: publicaciones-libros
-              uri: lb://SERVICE-PUBLICACIONES
+            - id: HealthAnalyzer
+              uri: lb://SERVICE-HEALTHANALYZER
               predicates:
-                - Path=/api/v1/libros/**
+                - Path=/conjunta/2p/health-analyzer/**
               filters:
                 - StripPrefix=2
             - id: publicaciones-paper
@@ -36,14 +36,7 @@ spring:
             - id: notificaciones
               uri: lb://SERVICE-NOTIFICACIONES
               predicates:
-                - Path=/api/v1/notificaciones/**
-              filters:
-                - StripPrefix=2
-            # Rutas para el servicio de catalogo
-            - id: catalogo
-              uri: lb://SERVICE-CATALOGO
-              predicates:
-                - Path=/api/v1/catalogo/**
+                - Path=/conjunta/2p/care-notifier/**
               filters:
                 - StripPrefix=2
 

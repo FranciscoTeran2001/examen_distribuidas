@@ -19,5 +19,7 @@
         <module>eureka-server</module>
         <module>api-gateway</module>
         <module>PatientDataCollector</module>
+        <module>HealthAnalyzer</module>
+        <module>CareNotifier</module>
     </modules>
 </project>

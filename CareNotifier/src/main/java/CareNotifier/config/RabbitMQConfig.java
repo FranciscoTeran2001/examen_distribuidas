@@ -1,9 +1,5 @@
 package CareNotifier.config;
-
-import org.springframework.amqp.core.*;
-import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
-import org.springframework.amqp.rabbit.core.RabbitTemplate;
-import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
+import org.springframework.amqp.core.Queue;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -11,17 +7,22 @@ import org.springframework.context.annotation.Configuration;
 public class RabbitMQConfig {
 
     @Bean
-    public Queue colaNotificacionesEmergencia() {
-        return QueueBuilder.durable("notificaciones.emergencia").build();
+    public Queue criticalAlertsQueue() {
+        return new Queue("critical.alerts.queue", true);
     }
 
     @Bean
-    public Queue colaNotificacionesNormales() {
-        return QueueBuilder.durable("notificaciones.normales").build();
+    public Queue warningAlertsQueue() {
+        return new Queue("warning.alerts.queue", true);
     }
 
     @Bean
-    public DirectExchange notificacionesExchange() {
-        return new DirectExchange("notificaciones.exchange");
+    public Queue infoAlertsQueue() {
+        return new Queue("info.alerts.queue", true);
+    }
+
+    @Bean
+    public Queue systemEventsQueue() {
+        return new Queue("system.events.queue", true);
     }
 }

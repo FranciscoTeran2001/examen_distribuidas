@@ -1,12 +1,8 @@
-# ========================================
-# APPLICATION.YML - PatientDataCollector
-# ========================================
-
 spring:
   application:
-    name: SERVICE-PATIENT-DATA-COLLECTOR
+    name: SERVICE-HEALTHANALYZER
   datasource:
-    url: jdbc:postgresql://localhost:36257/bd_patient?user=root&password=
+    url: jdbc:postgresql://localhost:36257/db_healthanalyzer?user=root&password=
     username: root
     password:
   jpa:
@@ -25,7 +21,7 @@ spring:
     password: admin
 
 server:
-  port: 8098
+  port: 8099
 
 eureka:
   client:
@@ -42,3 +38,4 @@ management:
     web:
       exposure:
         include: health,info
+
